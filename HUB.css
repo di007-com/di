@@ -1,0 +1,66 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: auto;
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding:10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.heart {
+    width: 10vw; /* Initial size to make sure it starts visible */
+    height: 10vw;
+    background-color: red;
+    position: relative;
+    transform: rotate(-45deg);
+    animation: growHeart 5s forwards;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -50%;
+    left: 0;
+}
+
+.heart::after {
+    left: 50%;
+    top: 0;
+}
+
+h1 {
+    margin-top: 20px;
+    font-size: 2rem;
+    color: black;
+}
+
+@keyframes growHeart {
+    from {
+        width: 2vw;
+        height: 2vw;
+    }
+    to {
+        width: 19vw; /* 55% of the viewport width */
+        height: 19vw;
+    }
+}
+
+
